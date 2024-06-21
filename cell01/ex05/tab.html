@@ -1,0 +1,71 @@
+<html>
+
+<head>
+    <title>Basics ex04</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            /* Define a fonte do corpo da página */
+            display: flex;
+            justify-content: center;
+            /* Centraliza a tabela horizontalmente */
+            align-items: center;
+            /* Centraliza a tabela verticalmente */
+            height: 100vh;
+            /* Faz a altura do body ocupar a tela toda */
+            margin: 0;
+            /* Remove margens padrão */
+        }
+
+        .tabela {
+            display: flex;
+            /* Faz com que as divs dentro da tabela fiquem lado a lado */
+            border: 2px solid black;
+            /* Adiciona uma borda ao redor da tabela */
+            border: red solid 10px;
+        }
+
+        .bloco {
+            width: 150px;
+            /* Define a largura das células */
+            height: 150px;
+            /* Define a altura das células */
+            display: flex;
+            /* Faz com que o texto dentro das células seja centralizado */
+            justify-content: center;
+            /* Centraliza o texto horizontalmente */
+            align-items: center;
+            /* Centraliza o texto verticalmente */
+            font-size: 20px;
+            /* Define o tamanho da fonte */
+            color: white;
+            /* Define a cor do texto */
+        }
+
+        .fundo-azul {
+            background-color: blue;
+            /* Define a cor de fundo da primeira célula */
+        }
+
+        .fundo-verde {
+            background-color: green;
+            /* Define a cor de fundo da segunda célula */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="tabela">
+        <div class="bloco fundo-azul">Time 1</div>
+        <div class="bloco fundo-verde">TIme 2</div>
+    </div>
+
+
+</body>
+
+</html>

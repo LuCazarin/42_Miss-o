@@ -1,0 +1,64 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.cartao {
+    width: 300px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+}
+
+.cartao h1 {
+    text-align: center;
+}
+
+.perfil {
+    text-align: center;
+}
+
+.perfil img {
+    width: 100px; /* Largura da foto de perfil */
+    height: auto;
+}
+
+.info {
+    margin-top: 10px;
+}
+
+.login,
+.descricao {
+    text-align: center;
+}
+
+.redes-sociais {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.redes-sociais img {
+    width: 30px;
+    margin: 0 5px;
+}
+
+.botao-contato {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.botao-contato:hover {
+    background-color: #0056b3;
+}
+
+

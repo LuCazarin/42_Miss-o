@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento de Tarefas</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="todo.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        #conteudo {
+            text-align: center;
+        }
+
+        #botaoAdicionar {
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #ft_list {
+            width: 300px;
+            margin: 0 auto;
+            padding: 0;
+            list-style: none;
+        }
+
+        .tarefa {
+            background-color: #fff;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
+
+        .tarefa:hover {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <div id="conteudo">
+        <button id="botaoAdicionar">Adicionar tarefa</button>
+        <div id="ft_list"></div>
+    </div>
+</body>
+</html>

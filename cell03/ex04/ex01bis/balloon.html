@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balão Interativo</title>
+    <style>
+        /* Estilização do balão */
+        #balloon {
+            width: 200px;
+            height: 200px;
+            background-color: red; /* Cor inicial do balão */
+            border-radius: 50%; /* Faz a div ser redonda */
+            transition: all 0.3s ease; /* Transição suave para mudanças de tamanho e cor */
+        }
+    </style>
+</head>
+<body>
+    <div id="balloon"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        // Seleciona a div do balão
+        const $balloon = $('#balloon');
+        
+        // Variáveis descritivas
+        let size = 200; // Tamanho inicial do balão
+        let colorIndex = 0; // Índice da cor atual do balão
+
+        // Função para alterar o tamanho e a cor do balão
+        function changeBalloon() {
+            // Verifica se o tamanho é menor ou igual a 200 e se o evento é 'mouseout', se for, retorna para evitar diminuir além do limite
+            if (size <= 200 && event.type === 'mouseout') return;
+            
+            // Altera o tamanho do balão e o índice da cor com base no evento (click ou mouseout)
+            size += (event.type === 'mouseout') ? -5 : (size > 420) ? -220 : 10;
+            colorIndex = (event.type === 'mouseout') ? (colorIndex - 1 + 3) % 3 : (colorIndex + 1) % 3;
+            
+            // Atualiza o tamanho e a cor do balão usando jQuery
+            $balloon.css({
+                width: size + 'px',
+                height: size + 'px',
+                backgroundColor: ['red', 'green', 'blue'][colorIndex] // Altera a cor do balão com base no índice
+            });
+        }
+
+        // Adiciona o evento de clique no balão para chamar a função changeBalloon
+        $balloon.on('click', changeBalloon);
+
+        // Adiciona o evento de mouseout no balão para chamar a função changeBalloon
+        $balloon.on('mouseout', changeBalloon);
+    </script>
+</body>
+</html>
+
+
+

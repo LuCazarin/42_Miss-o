@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora</title>
+<style>
+  body { font-family: Arial, sans-serif; }
+  input[type="number"], select, input[type="submit"] { margin-bottom: 10px; }
+</style>
+</head>
+<body>
+
+<!-- Campos de entrada para os números e o operador -->
+<input type="number" id="numeroEsquerdo" placeholder="Número esquerdo" min="0" step="1">
+<select id="operador">
+  <option value="+">+</option>
+  <option value="-">-</option>
+  <option value="*">*</option>
+  <option value="/">/</option>
+  <option value="%">%</option>
+</select>
+<input type="number" id="numeroDireito" placeholder="Número direito" min="0" step="1">
+<input type="submit" id="calcular" value="Try me!">
+
+<script>
+  // Função para calcular o resultado
+  function calcular() {
+    // Obtém os valores dos campos de entrada e converte para inteiros
+    var numeroEsquerdo = parseInt(document.getElementById('numeroEsquerdo').value);
+    var operador = document.getElementById('operador').value;
+    var numeroDireito = parseInt(document.getElementById('numeroDireito').value);
+    
+    // Verificar se os valores são válidos
+    // Verifica se numeroDireito não é um número. Se numeroDireito não puder ser convertido para um número válido, isNaN retorna true.
+    if (isNaN(numeroEsquerdo) || isNaN(numeroDireito)) {
+      alert('Erro :(');
+      return;
+    }
+    
+    // Executar o cálculo com base no operador selecionado
+    var resultado;
+    switch (operador) {
+      case '+':
+        resultado = numeroEsquerdo + numeroDireito;
+        break;
+      case '-':
+        resultado = numeroEsquerdo - numeroDireito;
+        break;
+      case '*':
+        resultado = numeroEsquerdo * numeroDireito;
+        break;
+      case '/':
+        if (numeroDireito === 0) {
+          alert("It’s over 9000!");
+          console.log("It’s over 9000!");
+          return;
+        }
+        resultado = numeroEsquerdo / numeroDireito;
+        break;
+      case '%':
+        if (numeroDireito === 0) {
+          alert("It’s over 9000!");
+          console.log("It’s over 9000!");
+          return;
+        }
+        resultado = numeroEsquerdo % numeroDireito;
+        break;
+    }
+    
+    // Exibir o resultado
+    alert('Resultado: ' + resultado);
+    console.log('Resultado: ' + resultado);
+  }
+  
+  // Evento de clique no botão de calcular
+  document.getElementById('calcular').addEventListener('click', function() {
+    calcular();
+  });
+  
+  // Popup a cada 30 segundos
+  setInterval(function() {
+    alert('Por favor, me use...');
+  }, 30000);
+
+  // Função para impedir a entrada de números decimais
+  function impedirDecimais(event) {
+    // Verifica se o valor contém um ponto decimal
+    if (event.target.value.includes('.')) {
+      alert('Erro :(');
+      event.target.value = event.target.value.split('.')[0]; // Remove a parte decimal
+    }
+  }
+
+  // Adiciona o evento de input para impedir números decimais nos campos
+  document.getElementById('numeroEsquerdo').addEventListener('input', impedirDecimais);
+  document.getElementById('numeroDireito').addEventListener('input', impedirDecimais);
+
+</script>
+
+</body>
+</html>
+
+
+

@@ -1,0 +1,63 @@
+/* Estilos Gerais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.botao-menu {
+    display: block;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 2;
+    font-size: 30px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    line-height: 30px;
+}
+
+#menu-checkbox {
+    display: none;
+}
+
+.menu-navegacao ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    background: #333;
+    position: fixed;
+    top: 0;
+    left: -200px; /* Escondido fora da tela */
+    width: 200px;
+    height: 100vh;
+    transition: left 0.3s ease;
+    z-index: 1;
+}
+
+.menu-navegacao ul li {
+    text-align: left;
+}
+
+.menu-navegacao ul li a {
+    display: block;
+    padding: 15px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.menu-navegacao ul li a:hover {
+    background: #444;
+}
+
+/* Mostra o menu quando o checkbox está marcado */
+#menu-checkbox:checked + .botao-menu + .menu-navegacao ul {
+    left: 0;
+}
+

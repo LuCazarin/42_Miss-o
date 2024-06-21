@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Basics ex04</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif; /* Define a fonte do corpo da página */
+      display: flex; /* Ativa flexbox para o corpo */
+      justify-content: center; /* Centraliza a tabela horizontalmente */
+      align-items: center; /* Centraliza a tabela verticalmente */
+      height: 100vh; /* Faz a altura do body ocupar a tela toda */
+      margin: 0; /* Remove margens padrão */
+    }
+
+    .tabela {
+      display: flex; /* Faz com que as divs dentro da tabela fiquem lado a lado */
+      width: 100%; /* Faz a tabela ocupar toda a largura */
+      height: 100%; /* Faz a tabela ocupar toda a altura */
+      border: 2px solid black; /* Adiciona uma borda ao redor da tabela */
+    }
+
+    .quadrado1, .quadrado2 {
+      flex: 1; /* Faz com que cada célula ocupe a mesma quantidade de espaço disponível */
+      display: flex; /* Centraliza o texto dentro das células */
+      justify-content: center; /* Centraliza o texto horizontalmente */
+      align-items: center; /* Centraliza o texto verticalmente */
+      font-size: 20px; /* Define o tamanho da fonte */
+      color: white; /* Define a cor do texto */
+    }
+
+    .quadrado1 {
+      background-color: blue; /* Define a cor de fundo da primeira célula */
+    }
+
+    .quadrado2 {
+      background-color: green; /* Define a cor de fundo da segunda célula */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="tabela">
+    <div class="quadrado1">Time 1</div>
+    <div class="quadrado2">Time 2</div>
+  </div>
+</body>
+</html>
